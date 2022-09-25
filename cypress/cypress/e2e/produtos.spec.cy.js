@@ -4,9 +4,9 @@
 import { faker } from "@faker-js/faker";
 
 describe('Funcionallidade Pagina de produtos', () => {
-
+   
     beforeEach(() => {
-        cy.visit ('http://lojaebac.ebaconline.art.br/produtos/')
+        cy.visit ('produtos')
 
     });
 
