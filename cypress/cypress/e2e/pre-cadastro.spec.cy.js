@@ -15,7 +15,7 @@ describe('Funcionallidade pre-cadastro', () => {
     });
 
 
-    it.only('Deve completar o pre-cadastro com sucesso', () => {
+    it('Deve completar o pre-cadastro com sucesso', () => {
 
         
         let primeiroNome= faker.name.firstName()     
@@ -49,5 +49,12 @@ describe('Funcionallidade pre-cadastro', () => {
         cy.get('#reg_password').type ('teste@teste.com1')
         cy.get(':nth-child(4) > .button').click()
 
+    });
+
+    it.only('Deve completar o pre-cadastro com sucesso- Usando Comandos Customizado', () => {
+        let emailFaker2= faker.internet.email() 
+        cy.preCadastro (emailFaker2, 'senha!@forte','Douglas', 'Liandi')
+        cy.get('.woocommerce-message').should('contain', 'sucesso')
+        
     });
 });

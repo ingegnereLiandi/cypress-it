@@ -26,7 +26,7 @@ describe('Funcionallidade Pagina de produtos', () => {
 
     })
 
-        it.only('Deve adicionar um produto ao carrinho', () => {
+        it('Deve adicionar um produto ao carrinho', () => {
 var quantidade= 15
             
             cy.get(':nth-child(4) > .page-numbers').click()
@@ -39,6 +39,17 @@ var quantidade= 15
             cy.get('.dropdown-toggle > .mini-cart-items').should('contain', quantidade)
 
         });
+
+        it.only('Deve adicionar produtos no carrinho--Usando Comando Customizados', () => {
+            cy.addProdutos ('Eos V-Neck Hoodie', 'M', 'Orange',3)
+            
+        });
+        it.only('Deve adicionar produtos no carrinho--Usando Comando Customizados', () => {
+            cy.addProdutos ('Eos V-Neck Hoodie', 'S', 'Blue',3)
+            
+        });
+
+        
        
 
   
